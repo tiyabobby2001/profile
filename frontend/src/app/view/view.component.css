@@ -1,0 +1,102 @@
+/* Container for the entire details section */
+div {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading style */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Paragraphs styling */
+  p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  /* Strong text for labels */
+  strong {
+    color: #333;
+  }
+  
+  /* List style for Address and Experiences */
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  /* Individual list item style */
+  li {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  /* Make the experience section standout */
+  p strong {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* Special styling for experiences */
+  ul li {
+    border-left: 3px solid #4CAF50;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    background-color: #e0f7fa;
+    border-radius: 3px;
+  }
+  
+  /* Optional: Add hover effect to experience items */
+  ul li:hover {
+    background-color: #b2ebf2;
+  }
+  
+  /* Date styling */
+  p span {
+    color: #888;
+  }
+  
+  /* Language list in JSON format */
+  p:last-of-type {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Basic Button Style */
+button {
+  background-color: #007bff; /* Blue background */
+  color: #ffffff;            /* White text */
+  border: none;              /* Remove default border */
+  border-radius: 4px;        /* Rounded corners */
+  padding: 10px 20px;        /* Padding */
+  font-size: 16px;           /* Font size */
+  cursor: pointer;           /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover and Focus States */
+button:hover,
+button:focus {
+  background-color: #0056b3; /* Darker blue on hover */
+  outline: none;             /* Remove focus outline */
+}
+
+/* Disabled State */
+button:disabled {
+  background-color: #cccccc; /* Gray background */
+  cursor: not-allowed;       /* Not-allowed cursor */
+}
+
+  

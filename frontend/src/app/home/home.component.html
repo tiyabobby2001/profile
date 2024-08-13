@@ -1,0 +1,31 @@
+<!-- home.component.html -->
+
+<div class="container">
+    <h1>Registered List</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Date Of Birth</th>
+          <th>Gender</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of details">
+          <td>{{ d.firstName }} {{ d.lastName }}</td>
+          <td>{{ d.email }}</td>
+          <td>{{d.dateOfBirth}}</td>
+          <td>{{d.gender}}</td>
+          <td>
+            <button class="btn btn-primary" [routerLink]="['/view', d.id]">View</button>
+            <button class="btn btn-primary" [routerLink]="['/edit', d.id]">Edit</button>
+            <button class="btn btn-danger" (click)="delete(d.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="navigateToRegister()">Register</button>
+  </div>
+  

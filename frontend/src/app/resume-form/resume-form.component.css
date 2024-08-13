@@ -1,0 +1,241 @@
+
+/* .container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+h2 {
+  text-align: center;
+  color: #f44c2e;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.form-group label,
+.form-check-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-control,
+.form-check-input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus,
+.form-check-input:focus {
+  border-color: #ff6347;
+  box-shadow: 0 0 5px rgba(255, 99, 71, 0.5);
+}
+
+.btn-primary {
+  margin-right: 10px;
+  background-color: #ff6347;
+  border-color: #ff6347;
+}
+
+.btn-primary:hover {
+  background-color: #e55342;
+  border-color: #d94332;
+}
+
+.btn-secondary {
+  background-color: #0f70c5;
+  border-color: #438ecf;
+}
+
+.btn-secondary:hover {
+  background-color: #1c6ca9;
+  border-color: #30689f;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.alert-success {
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.experience-group {
+  padding: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #e4e4e4;
+}
+
+body {
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+} */
+
+
+
+
+/* General Styles */
+
+button {
+  background-color: #007bff; /* Blue background */
+  color: #ffffff;            /* White text */
+  border: none;              /* Remove default border */
+  border-radius: 4px;        /* Rounded corners */
+  padding: 10px 20px;        /* Padding */
+  font-size: 16px;           /* Font size */
+  cursor: pointer; 
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover and Focus States */
+button:hover,
+button:focus {
+  background-color: #0056b3; /* Darker blue on hover */
+  outline: none;             /* Remove focus outline */
+}
+
+/* Disabled State */
+button:disabled {
+  background-color: #cccccc; /* Gray background */
+  cursor: not-allowed;       /* Not-allowed cursor */
+}
+
+  
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Group Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+input[type="text"], 
+input[type="date"], 
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+.text-danger {
+  color: #dc3545;
+  font-size: 0.875em;
+}
+
+/* Address Form Group Specific Styles */
+#city {
+  max-width: 200px;
+}
+
+/* Experience Group Styles */
+.experience-group {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #f7f7f7;
+}
+
+button.btn {
+  margin-top: 10px;
+}
+
+/* Buttons Styles */
+button.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+button.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+}
+
+button.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+
+button.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+button.btn:hover {
+  opacity: 0.9;
+}

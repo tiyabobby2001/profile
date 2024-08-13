@@ -1,0 +1,169 @@
+<div class="container">
+  <h2>Profile Builder</h2>
+  <form [formGroup]="resumeForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
+    <!-- First Name -->
+    <div class="form-group">
+      <label for="firstName">First Name*:</label>
+      <input id="firstName" formControlName="firstName" class="form-control">
+      <div *ngIf="resumeForm.controls['firstName'].invalid && resumeForm.controls['firstName'].touched"
+        class="text-danger">
+        First name is required.
+      </div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="form-group">
+      <label for="lastName">Last Name*:</label>
+      <input id="lastName" formControlName="lastName" class="form-control">
+      <div *ngIf="resumeForm.controls['lastName'].invalid && resumeForm.controls['lastName'].touched"
+        class="text-danger">
+        Last name is required.
+      </div>
+    </div>
+
+    <!-- Date of Birth -->
+    <div class="form-group">
+      <label for="dateOfBirth">Date of Birth*:</label>
+      <input id="dateOfBirth" type="date" formControlName="dateOfBirth" class="form-control">
+      <div *ngIf="resumeForm.controls['dateOfBirth'].invalid && resumeForm.controls['dateOfBirth'].touched"
+        class="text-danger">
+        Date of birth is required.
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email*:</label>
+      <input id="email" formControlName="email" class="form-control" >
+      <div *ngIf="resumeForm.controls['email'].invalid && resumeForm.controls['email'].touched"
+        class="text-danger">
+        Please enter a valid email.
+      </div>
+    </div>
+
+    <!-- Gender -->
+    <div class="form-group">
+      <label>Gender*:</label>
+      <div>
+        <label><input type="radio" formControlName="gender" value="Male"> Male</label>
+        <label><input type="radio" formControlName="gender" value="Female"> Female</label>
+        <label><input type="radio" formControlName="gender" value="Other"> Other</label>
+      </div>
+      <div *ngIf="resumeForm.controls['gender'].invalid && resumeForm.controls['gender'].touched"
+        class="text-danger">
+        Gender is required.
+      </div>
+    </div>
+
+    <!-- Languages Spoken -->
+    <div class="form-group">
+      <label>Languages Spoken:</label>
+      <div formArrayName="languages">
+        <div *ngFor="let lang of languages; let i = index">
+          <label>
+            <input type="checkbox" [formControlName]="i"> {{ lang }}
+          </label>
+        </div>
+      </div>
+    </div>
+<!--      
+  <div>
+    <label for="image">Upload Your Image:</label>
+    <input type="file" id="image" formControlName="image">
+  </div> -->
+    <!-- Address Form Group -->
+    <div formGroupName="address" class="form-group">
+      <label for="houseNo">House No*:</label>
+      <input id="houseNo" formControlName="houseNo" class="form-control">
+      <div *ngIf="resumeForm.get('address.houseNo')?.invalid && resumeForm.get('address.houseNo')?.touched"
+        class="text-danger">
+        House No is required.
+      </div>
+
+      <label for="street">Street*:</label>
+      <input id="street" formControlName="street" class="form-control">
+      <div *ngIf="resumeForm.get('address.street')?.invalid && resumeForm.get('address.street')?.touched"
+        class="text-danger">
+        Street is required.
+      </div>
+
+
+
+      <label for="state">State*</label>
+    <select id="state" formControlName="state" (change)="onStateChange()">
+        <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+    </select>
+    <div *ngIf="resumeForm.get('address.state')?.invalid && resumeForm.get('address.state')?.touched"
+        class="text-danger">
+        State is required.
+      </div>
+
+    <label for="city">City*</label>
+    <select id="city" formControlName="city" style="max-width: 100px;">
+        <option *ngFor="let c of cities" [value]="c">{{ c }}</option>
+    </select>
+  
+    <div *ngIf="resumeForm.get('address.city')?.invalid && resumeForm.get('address.city')?.touched"
+    class="text-danger">
+    City is required.
+  </div>
+
+      
+
+      <div>
+        <label for="pincode">Pincode</label>
+        <input type="text" id="pincode" formControlName="pincode" />
+        <div *ngIf="resumeForm.get('address.pincode')?.invalid && (resumeForm.get('address.pincode')?.dirty || resumeForm.get('address.pincode')?.touched)">
+          <div *ngIf="resumeForm.get('address.pincode')?.errors?.['required']">Pincode is required.</div>
+          <div *ngIf="resumeForm.get('address.pincode')?.errors?.['pattern']">Pincode must be a 6-digit number.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience Form Array -->
+    <div formArrayName="experiences" class="form-group">
+      <h3>Experience</h3>
+      <button type="button" class="btn btn-secondary" (click)="addExperience()">Add Experience</button>
+      <div class="experience-group" *ngFor="let exp of experiences.controls; let i = index" [formGroupName]="i">
+        <label for="companyName">Company Name*:</label>
+        <input id="companyName" formControlName="companyName" class="form-control">
+        <div *ngIf="exp.get('companyName')?.invalid && exp.get('companyName')?.touched" class="text-danger">
+          Company Name is required.
+        </div>
+
+        <label for="position">Position*:</label>
+        <input id="position" formControlName="position" class="form-control">
+        <div *ngIf="exp.get('position')?.invalid && exp.get('position')?.touched" class="text-danger">
+          Position is required.
+        </div>
+
+        <div formGroupName="experience">
+          <label for="dateOfJoining">Date of Joining*:</label>
+          <input id="dateOfJoining" type="date" formControlName="dateOfJoining" class="form-control">
+          <div *ngIf="exp.get('experience.dateOfJoining')?.invalid && exp.get('experience.dateOfJoining')?.touched"
+            class="text-danger">
+            Date of Joining is required.
+          </div>
+
+          <label for="dateOfResign">Date of Resign*:</label>
+          <input id="dateOfResign" type="date" formControlName="dateOfResign" class="form-control">
+          <div *ngIf="exp.get('experience.dateOfResign')?.invalid && exp.get('experience.dateOfResign')?.touched"
+            class="text-danger">
+            Date of Resign is required.
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-danger" (click)="removeExperience(i)">Remove Experience</button>
+      </div>
+    </div>
+
+    <!-- Submit and Reset Buttons -->
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
+      <button (click)="back()">back</button>
+    </div>
+
+  </form>
+</div>

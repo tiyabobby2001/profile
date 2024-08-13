@@ -1,0 +1,28 @@
+<!-- view.component.html -->
+
+<div *ngIf="details">
+    <h2>Personal Details</h2>
+    <p><strong>Name:</strong> {{ details.firstName }} {{ details.lastName }}</p>
+    <p><strong>Date of Birth:</strong> {{ details.dateOfBirth | date }}</p>
+    <p><strong>Email:</strong> {{ details.email }}</p>
+    <p><strong>Gender:</strong> {{ details.gender }}</p>
+    <p><strong>Languages:</strong> {{ details.languages | json }}</p>
+    <p><strong>Address:</strong></p>
+    <ul>
+      <li>House No: {{ details.address.houseNo }}</li>
+      <li>Street: {{ details.address.street }}</li>
+      <li>City: {{ details.address.city }}</li>
+      <li>State: {{ details.address.state }}</li>
+      <li>Pincode: {{ details.address.pincode }}</li>
+    </ul>
+    <p><strong>Experiences:</strong></p>
+    <ul>
+        <li *ngFor="let exp of details.experiences">
+          {{ exp.companyName }} - {{ exp.position }}
+          ({{ exp.dateOfJoining || 'N/A' }} to {{ exp.dateOfResign || 'N/A' }})
+        </li>
+      </ul>
+      <!-- <button (click)="back()">Back</button> -->
+  </div>
+  
+  
